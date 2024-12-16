@@ -16,19 +16,10 @@ export const Login = () => {
   return (
     <main className="login-page-container">
       <section className="login-video-container">
-        <ReactPlayer
-          url="https://res.cloudinary.com/darwtgzlk/video/upload/v1686325123/socialMedia/heroVideo/pexels-kampus-production-7800162-2160x3840-25fps_bepbjw.mp4"
-          playing
-          playbackRate={1.5}
-          muted
-          loop
-          controls={false}
-          width={"100%"}
-          height={"100%"}
-        />
+    
       </section>
       <section className="login-form-container">
-        <h1 className="login-form-heading">Welcome to Quack!</h1>
+        <h1 className="login-form-heading">Welcome to Scamless!</h1>
 
         <h3 className="login-heading">Login </h3>
 

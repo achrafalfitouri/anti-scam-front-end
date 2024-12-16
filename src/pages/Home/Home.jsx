@@ -57,7 +57,7 @@ export const Home = () => {
 
         <main className="feed">
           <CreatePostForm />
-
+          
           <div className="sorting-container">
             <p>{sortBy} Posts</p>
             <TbAdjustmentsHorizontal
@@ -108,6 +108,7 @@ export const Home = () => {
 
         {auth.isAuth && <Discover className="discover" />}
       </div>
+      
     </>
   );
 };

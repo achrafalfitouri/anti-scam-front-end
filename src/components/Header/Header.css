@@ -1,31 +1,203 @@
+/* General Header Styles */
+/* General Header Styles */
 .header {
   position: sticky;
   top: 0;
-  padding: 2rem;
-  font-size: 1.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5rem 2rem;
+  background-color: #000;
+  height: 8vh;
+  color: white;
+  z-index: 10;
+  position: relative; /* Ensure proper positioning context */
+}
+
+/* Header Center Section */
+.header-center {
   display: flex;
   align-items: center;
-  font-weight: 600;
-  background-color: black;
-  padding-left: 4.2vw;
-  height: 10vh
-}
-.header > p {
-  display: none;
-  color: white;
-  margin-left: 10px;
-  cursor: pointer;
+  position: relative; /* Position relative for absolute logo */
+  gap: 2rem;
+  flex: 1;
+  justify-content: center;
 }
 
+/* Header Logo (Centered) */
 .header-logo {
+  position: absolute;
+  left: 5.5%; /* Horizontally center */
+  transform: translateX(-50%); /* Fine-tune centering */
   color: white;
   cursor: pointer;
+  z-index: 2; /* Ensure the logo is above other elements */
 }
 
-@media (min-width: 768px) {
-  .header > p {
+/* Header Text (Scamless) */
+.header-logo-p {
+  display: none;
+
+  position: absolute;
+  left: calc(7.5% + 35px); /* Slight offset from the logo */
+  transform: translateX(-50%);
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  font-size: 18px;
+  z-index: 2;
+}
+
+
+.header-icon.active-icon {
+  color: rgb(29, 155, 240);
+  /* Add !important if necessary */
+}
+
+/* Search Bar */
+.header-search input {
+  width: 300px;
+  padding: 0.6rem 1rem;
+  border: 1px solid #444;
+  border-radius: 20px;
+  background-color: #222;
+  color: white;
+  outline: none;
+}
+.header-search input::placeholder {
+  color: #777;
+}
+
+/* Buttons Section */
+.header-buttons {
+  display: flex;
+  gap: 3.5rem;
+}
+.header-buttons button {
+  padding: 0.5rem 1rem;
+  background-color: #222;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+.header-buttons button:hover {
+  background-color: #333;
+}
+
+/* Header Right Section */
+.header-right {
+  display: flex;
+  align-items: center;
+  gap: 1.2rem;
+}
+.header-icon {
+  color: white;
+  cursor: pointer;
+  transition: color 0.3s ease;
+  font-size: 1.2rem;
+}
+.header-icon:hover {
+  color: #ccc;
+}
+@media (min-width: 1200px) {
+  .header-logo-p {
     color: white;
-    margin-left: 15px;
     display: inline-block;
   }
+}
+@media (max-width: 1200px) {
+  .header-logo {
+    color: white;
+    left: 7.4%;
+    display: inline-block;
+  }
+}
+@media (max-width: 1024px) {
+
+  
+  .header-search input {
+    width: 250px;
+    font-size: 11px;
+
+
+  }
+
+  .header-buttons {
+    display: flex;
+    gap: 2rem;
+  }
+  .header-buttons button {
+    font-size: 11px;
+  }
+
+  /* Header Center Section */
+.header-center {
+
+  gap: 2rem;
+  margin-right:120px ;
+}
+
+}
+@media (max-width: 990px) {
+
+    .header-logo {
+    color: white;
+    left: 7.4%;
+    display: inline-block;
+  }
+  .header-search input {
+    width: 200px;
+    font-size: 11px;
+
+
+  }
+
+  .header-buttons {
+    display: flex;
+    gap: 1rem;
+  }
+  .header-buttons button {
+    font-size: 11px;
+  }
+
+  /* Header Center Section */
+.header-center {
+
+  gap: 2rem;
+  margin-right:120px ;
+}
+
+}
+@media (max-width: 900px) {
+
+  .header-logo {
+    color: white;
+    left: 10%;
+    display: inline-block;
+  }
+  .header-search input {
+    width: 150px;
+    font-size: 11px;
+     margin-left: 130px;
+
+  }
+
+  .header-buttons {
+    display: flex;
+    gap: 1rem;
+  }
+  .header-buttons button {
+    font-size: 11px;
+  }
+
+  /* Header Center Section */
+.header-center {
+
+  gap: 2rem;
+  margin-right:120px ;
+}
+
 }

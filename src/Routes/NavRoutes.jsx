@@ -9,6 +9,7 @@ import { Login } from "../pages/Auth/Login/Login";
 import { Signup } from "../pages/Auth/Signup/Signup";
 import { PostDetail } from "../pages/PostDetail/PostDetail";
 import { Error } from "../pages/Error/Error";
+import { Marketplace } from "../pages/Marketplace/Marketplace";
 
 export const NavRoutes = () => {
   return (
@@ -18,6 +19,15 @@ export const NavRoutes = () => {
         element={
           <RequiresAuth>
             <Home />
+          </RequiresAuth>
+        }
+      />
+
+<Route
+        path="/marketplace"
+        element={
+          <RequiresAuth>
+            <Marketplace /> 
           </RequiresAuth>
         }
       />

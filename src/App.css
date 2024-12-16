@@ -24,13 +24,46 @@ a {
   flex-flow: column nowrap;
 }
 
+/* Scrollbar Styles */
 .feed {
   background-color: black;
   color: white;
   height: 90vh;
   overflow: auto;
   order: 2;
+
+  /* For Firefox */
+
 }
+
+/* Webkit Scrollbar Styles (Chrome, Edge, Safari) */
+.feed::-webkit-scrollbar {
+  width: 8px; /* Width of the scrollbar */
+}
+
+.feed::-webkit-scrollbar-track {
+  background: transparent; /* Transparent track */
+}
+
+.feed::-webkit-scrollbar-thumb {
+  background-color: rgba(255, 255, 255, 0.3); /* Thumb color */
+  border-radius: 4px; /* Rounded corners */
+  border: 2px solid black; /* Adds spacing around the thumb */
+  transition: background-color 0.3s ease; /* Smooth color change on hover */
+}
+
+.feed::-webkit-scrollbar-thumb:hover {
+  background-color: rgba(255, 255, 255, 0.5); /* Thumb color on hover */
+}
+
+/* For Modern Browsers (Override Edge issues if needed) */
+@supports (-webkit-overflow-scrolling: touch) {
+  .feed {
+    -webkit-overflow-scrolling: touch; /* Smooth scrolling on mobile/webkit browsers */
+  }
+}
+
+
 .navbar {
   order: 3;
   position: sticky;
@@ -74,7 +107,7 @@ a {
 @media (min-width: 900px) {
   .feed {
     height: 90vh;
-    overflow: auto;
+    overflow: none;
     width: 50%;
   }
 
@@ -95,7 +128,7 @@ a {
 
 @media (min-width: 1200px) {
   .feed {
-    height: 90vh;
+    height: 120vh;
     overflow: auto;
     width: 50%;
   }

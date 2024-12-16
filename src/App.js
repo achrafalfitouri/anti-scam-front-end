@@ -1,16 +1,16 @@
 import "./App.css";
 import { useAuth } from "./contexts/AuthProvider";
 import { NavRoutes } from "./Routes/NavRoutes";
-import { ScrollToTop } from "./components/ScrollToTop/ScrollToTop";
 import { Toaster } from "react-hot-toast";
 import { usePosts } from "./contexts/PostsProvider";
 import { Loader } from "./components/Loader/Loader";
+import ScrollToTop from "react-scroll-to-top";
 
 function App() {
   const { postLoading } = usePosts();
   return (
     <div className="App">
-      <ScrollToTop />
+     
       <NavRoutes />
       {postLoading && <Loader />}
       <Toaster
@@ -24,6 +24,8 @@ function App() {
           top: "6rem",
         }}
       />
+            <ScrollToTop smooth color="black" />
+
     </div>
   );
 }
