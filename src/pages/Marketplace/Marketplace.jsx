@@ -8,6 +8,7 @@ import { Card } from "antd";
 import MarketplaceModal from "../../components/MarketplaceModal/MarketplaceModal";
 import MarketplaceItem from "./MarketplaceItem/MarketplaceItem";
 import { Loader } from "../../components/Loader/Loader";
+import { usePosts } from "../../contexts/PostsProvider";
 
 export const Marketplace = () => {
   const [isLoading, setIsLoading] = useState(false);
@@ -141,6 +142,7 @@ export const Marketplace = () => {
   const toggleModal = (id, isOpen) => {
     setIsModalOpen((prev) => ({ ...prev, [id]: isOpen }));
   };
+  const { postLoading } = usePosts();
 
   return (
     <>
@@ -150,7 +152,7 @@ export const Marketplace = () => {
         {auth.isAuth && <Navbar />}
 
         <main className="marketplace-container">
-          {isLoading ? (
+          {postLoading ? (
             <div className="loading-spinner">
               <Loader />
             </div>
