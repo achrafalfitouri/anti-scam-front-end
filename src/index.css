@@ -11,3 +11,25 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+
+/* Webkit Scrollbar Styles (Chrome, Edge, Safari) */
+::-webkit-scrollbar {
+  width: 8px; /* Width of the scrollbar */
+  background-color: rgba(0, 0, 0, 0.3);}
+
+::-webkit-scrollbar-track {
+  background: transparent; /* Transparent track */
+  background-color: rgba(196, 196, 196, 0.3);}
+
+
+::-webkit-scrollbar-thumb {
+  background-color: rgba(94, 84, 84, 0.3); /* Thumb color */
+  border-radius: 4px; /* Rounded corners */
+  border: 2px solid rgb(56, 54, 54); /* Adds spacing around the thumb */
+  transition: background-color 0.3s ease; /* Smooth color change on hover */
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: rgba(29, 27, 27, 0.5); /* Thumb color on hover */
+}

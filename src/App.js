@@ -12,7 +12,7 @@ function App() {
     <div className="App">
      
       <NavRoutes />
-      {postLoading && <Loader />}
+    
       <Toaster
         position="top-center"
         reverseOrder={false}
@@ -24,7 +24,7 @@ function App() {
           top: "6rem",
         }}
       />
-            <ScrollToTop smooth color="black" />
+            <ScrollToTop smooth color="white" style={{backgroundColor :' #1d9bf0' , right : "1rem"}} />
 
     </div>
   );

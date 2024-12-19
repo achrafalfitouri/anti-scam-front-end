@@ -10,6 +10,7 @@ import { Signup } from "../pages/Auth/Signup/Signup";
 import { PostDetail } from "../pages/PostDetail/PostDetail";
 import { Error } from "../pages/Error/Error";
 import { Marketplace } from "../pages/Marketplace/Marketplace";
+import MarketplaceItem from "../pages/Marketplace/MarketplaceItem/MarketplaceItem";
 
 export const NavRoutes = () => {
   return (
@@ -23,11 +24,19 @@ export const NavRoutes = () => {
         }
       />
 
-<Route
+      <Route
         path="/marketplace"
         element={
           <RequiresAuth>
-            <Marketplace /> 
+            <Marketplace />
+          </RequiresAuth>
+        }
+      />
+      <Route
+        path="/marketplace/:postId"
+        element={
+          <RequiresAuth>
+            <MarketplaceItem />
           </RequiresAuth>
         }
       />
