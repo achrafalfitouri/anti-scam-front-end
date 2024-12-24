@@ -54,17 +54,20 @@ const MarketplaceItem = ({ post, isModalOpen, toggleModal }) => {
 
   return (
     <div>
-      <Modal
-        width={1200}
-        title={`Post ${post.id}`}
-        open={isModalOpen}
-        onOk={() => toggleModal(post.id, false)}
-        onCancel={() => toggleModal(post.id, false)}
-        footer={null}
-        bodyStyle={{ padding: 0 }}
-        style={{ borderRadius: token.borderRadius }}
-        maskStyle={modalStyles.mask}
-      >
+  <Modal
+  width={1200}
+  title={`Post ${post.id}`}
+  open={isModalOpen}
+  onOk={() => toggleModal(post.id, false)}
+  onCancel={() => toggleModal(post.id, false)}
+  footer={null}
+  styles={{
+    body: { padding: 0 },
+    mask: modalStyles.mask,
+  }}
+  style={{ borderRadius: token.borderRadius }}
+>
+
         <div className={styles["my-modal-body"]}>
           {/* Left Section: Image or Carousel */}
           <div className={styles["image-section"]}>
@@ -73,7 +76,7 @@ const MarketplaceItem = ({ post, isModalOpen, toggleModal }) => {
                 components: {
                   Carousel: {
                     arrowSize: 45,
-                    arrowOffset: 35,
+                    arrowOffset: 30,
                     colorBgContainer: "rgba(74, 72, 72, 0.88)",
                   },
                   token: {},
